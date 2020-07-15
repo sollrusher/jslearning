@@ -20,4 +20,4 @@ let fw1=prompt(`Фильм?`,``),
 personalMovieDB.movies[fw1]=oc1;
 personalMovieDB.movies[fw2]=oc2;
 
-console.log(personalMovieDB);
+console.log(personalMovieDB); 
