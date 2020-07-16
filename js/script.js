@@ -1,7 +1,7 @@
 "use strict";
 
 let numberOfFilms;
-numberOfFilms=prompt("Сколько фильмов вы посмотрели? ","");
+numberOfFilms=+prompt("Сколько фильмов вы посмотрели? ","");
 
 let personalMovieDB= {
 
@@ -12,12 +12,36 @@ let personalMovieDB= {
     privat: false
 };
 
-let fw1=prompt(`Фильм?`,``),
-    oc1=prompt(`Оценка`,``),
-    fw2=prompt(`Фильм?`,``),
-    oc2=prompt(`Оценка`,``);
+if(personalMovieDB.count <10)
+{
+    alert("Просмотрено довольно мало фильмов");
+}
+else if(personalMovieDB.count >10 && personalMovieDB.count <30)
+{
+    alert("Вы классический зритель");
+}
+else if(personalMovieDB.count>30)
+{
+    alert("Вы киноман");
+}
+else{alert("Произошла ошибка");}
+   
 
-personalMovieDB.movies[fw1]=oc1;
-personalMovieDB.movies[fw2]=oc2;
+for (let i=0; i<2; i++)
+{
 
-console.log(personalMovieDB); 
+    let fw1=prompt(`Фильм?`,``),
+        oc1=prompt(`Оценка`,``);
+
+        if(fw1!=null && oc1!=null && fw1.length!="" && oc1.length!="" && fw1.length<50 && oc1.length <50){
+        
+        personalMovieDB.movies[fw1]=oc1;
+        }
+else{i--;}
+
+}
+
+console.log(personalMovieDB);  
+
+
+
